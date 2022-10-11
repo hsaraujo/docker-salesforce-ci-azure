@@ -9,6 +9,7 @@ RUN echo "Y" | apt-get install zip
 RUN echo "Y" | apt-get install wget
 RUN echo "Y" | apt-get install jq
 RUN apt -y install xdg-utils
+RUN apt -y install azure-cli
 #RUN echo "Y" | apt-get install xmlstarlet
 RUN echo "Y" | apt-get install python3
 RUN echo "Y" | apt-get install python3-pip
