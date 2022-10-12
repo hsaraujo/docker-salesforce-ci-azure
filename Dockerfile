@@ -9,7 +9,6 @@ RUN echo "Y" | apt-get install zip
 RUN echo "Y" | apt-get install wget
 RUN echo "Y" | apt-get install jq
 RUN apt -y install xdg-utils
-RUN apt -y install azure-cli
 #RUN echo "Y" | apt-get install xmlstarlet
 RUN echo "Y" | apt-get install python3
 RUN echo "Y" | apt-get install python3-pip
@@ -52,6 +51,11 @@ RUN ln -sf bash /bin/sh && \
     export XDG_DATA_HOME && \
     export XDG_CONFIG_HOME && \
     export XDG_CACHE_HOME
+
+# Install Azure CLI
+RUN apt -y remove azure-cli
+RUN apt -y autoremove
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 RUN curl -sLO https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip && \
     unzip pmd-bin-*.zip && \
