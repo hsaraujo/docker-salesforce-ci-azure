@@ -18,7 +18,7 @@ RUN apt -y install nodejs
 # RUN apt -y install npm
 RUN npm install -g sf-packager
 RUN npm install -g jsforce-metadata-tools
-RUN npm install -g sfdx-cli@7.166.1
+RUN npm install -g sfdx-cli@7.172.0
 RUN npm install -g sfdx-packager
 RUN npm install -g semver
 
